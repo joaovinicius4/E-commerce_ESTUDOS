@@ -3,15 +3,19 @@ package entities;
 import java.time.LocalDate;
 
 public class Roupa extends Produto{
+	
+	private static final double TAXA_ROUPA = 0.10;
+	private static final double DESCONTO_JANEIRO = 0.20;
+	private static final double DESCONTO_JULHO = 0.15;
+	 
+	private String tamanho;
 
-	private Integer tamanho;
-
-	public Roupa(String nome, Integer id, double preco, Integer tamanho) {
+	public Roupa(String nome, Integer id, double preco, String tamanho) {
 		super(nome, id, preco);
 		this.tamanho = tamanho;
 	}
 
-	public Integer getTamanho() {
+	public String getTamanho() {
 		return tamanho;
 	}
 
