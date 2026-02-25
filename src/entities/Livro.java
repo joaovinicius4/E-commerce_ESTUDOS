@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Livro extends Produto{
 	
-	public static final double TAXA_LIVRO = 0.1;
+	private static final double TAXA_LIVRO = 0.1;
 	
 	private String autor;
 	
