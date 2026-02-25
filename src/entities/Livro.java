@@ -6,7 +6,7 @@ public class Livro extends Produto{
 	
 	private String autor;
 	
-	public Livro(String nome, Integer id, Double preco, String autor) {
+	public Livro(String nome, Integer id, double preco, String autor) {
 		super(nome, id, preco);
 		this.autor = autor;
 	}
