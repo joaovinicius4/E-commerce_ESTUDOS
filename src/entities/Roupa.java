@@ -1,6 +1,7 @@
 package entities;
 
 import java.time.LocalDate;
+import java.time.Month;
 
 public class Roupa extends Produto{
 	
@@ -21,9 +22,17 @@ public class Roupa extends Produto{
 
 	@Override
 	public double calcularPrecoFinal(LocalDate dataCompra) {
-		return 0;
+		
+		double precoComImposto = getPreco() * (1 + TAXA_ROUPA);
+		double precoFinal = precoComImposto;
+
+		if (dataCompra.getMonth() == Month.JANUARY) 
+		    precoFinal *= (1 - DESCONTO_JANEIRO);
+		else if (dataCompra.getMonth() == Month.JULY) 
+		    precoFinal *= (1 - DESCONTO_JULHO);
+		
+		return precoFinal;
 	}
-	
 	
 }
 
