@@ -1,5 +1,7 @@
 package entities;
 
+import java.time.LocalDate;
+
 public class Eletronico extends Produto{
 
 	private String marca;
@@ -14,7 +16,7 @@ public class Eletronico extends Produto{
 	}
 
 	@Override
-	public double calcularPrecoFinal() {
+	public double calcularPrecoFinal(LocalDate datacompra) {
 		
 	}
 

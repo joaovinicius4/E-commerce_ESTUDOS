@@ -1,5 +1,7 @@
 package entities;
 
+import java.time.LocalDate;
+
 public class Livro extends Produto{
 	
 	public static final double TAXA_LIVRO = 0.1;
@@ -16,7 +18,7 @@ public class Livro extends Produto{
 	}
 	
 	@Override
-	public double calcularPrecoFinal() {
+	public double calcularPrecoFinal(LocalDate dataCompra) {
 		return getPreco() * (1 + TAXA_LIVRO);
 	}
 

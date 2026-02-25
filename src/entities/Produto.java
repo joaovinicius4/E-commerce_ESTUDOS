@@ -1,5 +1,7 @@
 package entities;
 
+import java.time.LocalDate;
+
 public abstract class Produto {
 	
 	private String nome;
@@ -22,10 +24,10 @@ public abstract class Produto {
 		return id;
 	}
 
-	public Double getPreco() {
+	public double getPreco() {
 		return preco;
 	}
 
-	public abstract double calcularPrecoFinal();
-	
+	public abstract double calcularPrecoFinal(LocalDate dataCompra);
+
 }
