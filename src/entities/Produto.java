@@ -30,4 +30,8 @@ public abstract class Produto {
 
 	public abstract double calcularPrecoFinal(LocalDate dataCompra);
 
+	@Override
+	public String toString() {
+	    return nome + " (ID: " + id + ") - R$ " + String.format("%.2f", preco);
+	}
 }
