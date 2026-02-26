@@ -46,34 +46,33 @@ public class Sistema {
 		    	Integer id = sc.nextInt();
 		    	System.out.print("Digite o preco: ");
 		    	double preco = sc.nextDouble();
-		    	System.out.println("Digite qual tipo de produto é: ");
 		    	System.out.print("1 - eletronico, 2 - livro, 3 - roupa: ");
 		    	int opcao = sc.nextInt();
 		    	
 		    	switch(opcao) {
-		    	
-		    	case 1:
-		    		sc.nextLine();
-		    		System.out.print("Qual a marca do eletronico: ");
-		    		String marca = sc.nextLine();
-		    		Eletronico eletronico = new Eletronico(nomeprod, id, preco, marca);
-		    		cliente.getCarrinho().adicionarProduto(eletronico);
-		    		break;
-		    	case 2: 
-		    		sc.nextLine();
-		    		System.out.print("Digite o nome do autor: ");
-		    		String autor = sc.nextLine();
-		    		Livro livro = new Livro(nomeprod, id, preco, autor);
-		    		cliente.getCarrinho().adicionarProduto(livro);
-		    		break;
-		    	case 3:
-		    		System.out.print("Digite o tamanho da roupa(PP/P/M/G/GG): ");
-		    		Tamanhos tamanho = Tamanhos.valueOf(sc.next().toUpperCase());
-		    		Roupa roupa =  new Roupa(nomeprod, id, preco, tamanho);
-		    		cliente.getCarrinho().adicionarProduto(roupa);
-		    		break;
-		    		
-		    	}		
+		    	    case 1:
+		    	        sc.nextLine();
+		    	        System.out.print("Qual a marca do eletronico: ");
+		    	        String marca = sc.nextLine();
+		    	        Eletronico eletronico = new Eletronico(nomeprod, id, preco, marca);
+		    	        cliente.getCarrinho().adicionarProduto(eletronico);
+		    	        break;
+		    	    case 2:
+		    	        sc.nextLine();
+		    	        System.out.print("Digite o nome do autor: ");
+		    	        String autor = sc.nextLine();
+		    	        Livro livro = new Livro(nomeprod, id, preco, autor);
+		    	        cliente.getCarrinho().adicionarProduto(livro);
+		    	        break;
+		    	    case 3:
+		    	        System.out.print("Digite o tamanho da roupa(PP/P/M/G/GG): ");
+		    	        Tamanhos tamanho = Tamanhos.valueOf(sc.next().toUpperCase());
+		    	        Roupa roupa = new Roupa(nomeprod, id, preco, tamanho);
+		    	        cliente.getCarrinho().adicionarProduto(roupa);
+		    	        break;
+		    	    default:
+		    	        System.out.println("Opção inválida!");
+		    	}
 		    }
 		    double total = cliente.getCarrinho().calcularTotal(dataDaCompra);
 		    System.out.println("Total da compra de " + nome + ": " + total);
