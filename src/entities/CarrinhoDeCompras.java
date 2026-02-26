@@ -16,12 +16,19 @@ public class CarrinhoDeCompras {
 		produtos.remove(produto);
 	}
 	
+	public List<Produto> getProdutos() {
+	    return new ArrayList<>(produtos);
+	}
 	
 	public double calcularTotal(LocalDate dataCompra) {
 	    double total = 0;
 	    for (Produto p : produtos) 
 	        total += p.calcularPrecoFinal(dataCompra);
 	    return total;
+	}
+	
+	public void limparCarrinho() {
+	    produtos.clear();
 	}
 	
 }
