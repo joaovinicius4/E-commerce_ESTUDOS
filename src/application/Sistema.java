@@ -35,30 +35,30 @@ public class Sistema {
 		    
 		    System.out.print("Quantos produtos esse cliente comprou: ");
 		    int quantidade = sc.nextInt();
+		    sc.nextLine();
 		    
 		    Cliente cliente = new Cliente(nome, cpf);  
 		    
 		    for(int j = 1; j <= quantidade; j++) {
-		    	sc.nextLine();
 		    	System.out.print("Digite o nome do produto "+ j +": ");
 		    	String nomeprod = sc.nextLine();
 		    	System.out.print("Digite o id: ");
 		    	Integer id = sc.nextInt();
 		    	System.out.print("Digite o preco: ");
 		    	double preco = sc.nextDouble();
+		    	System.out.print("Digite em qual area esta o produto: ");
 		    	System.out.print("1 - eletronico, 2 - livro, 3 - roupa: ");
 		    	int opcao = sc.nextInt();
+		    	sc.nextLine();
 		    	
 		    	switch(opcao) {
 		    	    case 1:
-		    	        sc.nextLine();
 		    	        System.out.print("Qual a marca do eletronico: ");
 		    	        String marca = sc.nextLine();
 		    	        Eletronico eletronico = new Eletronico(nomeprod, id, preco, marca);
 		    	        cliente.getCarrinho().adicionarProduto(eletronico);
 		    	        break;
 		    	    case 2:
-		    	        sc.nextLine();
 		    	        System.out.print("Digite o nome do autor: ");
 		    	        String autor = sc.nextLine();
 		    	        Livro livro = new Livro(nomeprod, id, preco, autor);
