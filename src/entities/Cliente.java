@@ -6,10 +6,9 @@ public class Cliente {
 	private String cpf;
 	private CarrinhoDeCompras carrinho;
 	
-	public Cliente(String nome, String cpf, CarrinhoDeCompras carrinho) {
+	public Cliente(String nome, String cpf) {
 		this.nome = nome;
 		this.cpf = cpf;
-		this.carrinho = carrinho;
 	}
 
 	public String getNome() {
