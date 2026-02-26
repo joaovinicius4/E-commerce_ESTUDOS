@@ -9,6 +9,7 @@ public class Cliente {
 	public Cliente(String nome, String cpf) {
 		this.nome = nome;
 		this.cpf = cpf;
+		carrinho = new CarrinhoDeCompras();
 	}
 
 	public String getNome() {
