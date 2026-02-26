@@ -71,9 +71,12 @@ public class Sistema {
 		    		Tamanhos tamanho = Tamanhos.valueOf(sc.next().toUpperCase());
 		    		Roupa roupa =  new Roupa(nomeprod, id, preco, tamanho);
 		    		cliente.getCarrinho().adicionarProduto(roupa);
+		    		break;
 		    		
 		    	}		
 		    }
+		    double total = cliente.getCarrinho().calcularTotal(dataDaCompra);
+		    System.out.println("Total da compra de " + nome + ": " + total);
 		    clientes.add(cliente); 
 		}
 		
