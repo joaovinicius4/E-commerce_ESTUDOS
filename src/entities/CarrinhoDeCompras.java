@@ -31,4 +31,25 @@ public class CarrinhoDeCompras {
 	    produtos.clear();
 	}
 	
+	public String gerarRelatorio(LocalDate dataCompra) {
+	    StringBuilder sb = new StringBuilder();
+	    double total = 0.0;
+
+	    for (Produto p : produtos) {
+	        double precoFinal = p.calcularPrecoFinal(dataCompra);
+	        total += precoFinal;
+
+	        sb.append(p.getNome())
+	          .append(" - R$ ")
+	          .append(String.format("%.2f", precoFinal))
+	          .append("\n");
+	    }
+
+	    sb.append("Total: R$ ")
+	      .append(String.format("%.2f", total))
+	      .append("\n");
+
+	    return sb.toString();
+	}
+	
 }
