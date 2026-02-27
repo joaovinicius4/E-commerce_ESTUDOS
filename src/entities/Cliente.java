@@ -24,4 +24,18 @@ public class Cliente {
 		return carrinho;
 	}
 	
+	public String toString(LocalDate dataCompra) {
+	    StringBuilder sb = new StringBuilder();
+
+	    sb.append("Cliente: ")
+	      .append(nome)
+	      .append("\nCPF: ")
+	      .append(cpf)
+	      .append("\n\nProdutos:\n");
+
+	    sb.append(carrinho.gerarRelatorio(dataCompra));
+
+	    return sb.toString();
+	}
+	
 }
