@@ -44,8 +44,10 @@ public class Sistema {
 		    	String nomeprod = sc.nextLine();
 		    	System.out.print("Digite o id: ");
 		    	Integer id = sc.nextInt();
+		    	sc.nextLine();
 		    	System.out.print("Digite o preco: ");
 		    	double preco = sc.nextDouble();
+		    	sc.nextLine();
 		    	System.out.print("Digite em qual area esta o produto: ");
 		    	System.out.print("1 - eletronico, 2 - livro, 3 - roupa: ");
 		    	int opcao = sc.nextInt();
@@ -67,6 +69,7 @@ public class Sistema {
 		    	    case 3:
 		    	        System.out.print("Digite o tamanho da roupa(PP/P/M/G/GG): ");
 		    	        Tamanhos tamanho = Tamanhos.valueOf(sc.next().toUpperCase());
+		    	        sc.nextLine();
 		    	        Roupa roupa = new Roupa(nomeprod, id, preco, tamanho);
 		    	        cliente.getCarrinho().adicionarProduto(roupa);
 		    	        break;
@@ -74,11 +77,12 @@ public class Sistema {
 		    	        System.out.println("Opção inválida!");
 		    	}
 		    }
-		    double total = cliente.getCarrinho().calcularTotal(dataDaCompra);
-		    System.out.println("Total da compra de " + nome + ": " + total);
-		    clientes.add(cliente); 
+		    clientes.add(cliente);
 		}
 		
+	    System.out.println("\nRELATÓRIO DO DIA\n");
+		for (Cliente c : clientes) 
+			System.out.println(c.toString(dataDaCompra));
 		
 		sc.close();
 	}
